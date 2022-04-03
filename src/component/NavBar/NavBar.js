@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 import Logo from "../../Assest/image/logo.png";
 import './NavBar.css';
 
@@ -10,9 +10,9 @@ const NavBar = () => {
             <img src={Logo} alt=''/>
            </div>
            <div className='link-container'>
-              <Link className='link' to="/">Home</Link>
-              <Link className='link'to="/videos">Videos</Link>
-              <Link className='link' to="/login">Login</Link>
+              <NavLink className={({isActive}) => isActive ? "active-link" : "link"} to="/">Home</NavLink>
+              <NavLink className={({isActive}) => isActive ? "active-link" : "link"}to="/videos">Videos</NavLink>
+              <NavLink className={({isActive}) => isActive ? "active-link" : "link"} to="/login">Login</NavLink>
            </div>
        </nav>
     );
